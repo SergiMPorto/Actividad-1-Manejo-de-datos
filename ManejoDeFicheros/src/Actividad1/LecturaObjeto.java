@@ -113,21 +113,25 @@ public class LecturaObjeto {
         System.out.println("Artículo añadido con éxito:\n" + nuevoArticulo);
     }
     
-    private static void borrarArticulo(List<Articulo>listaArticulos) {
-    	Scanner sc2 = new Scanner(System.in);
-    	System.out.println("Ponga el ide del articulo a borrar");
-    	String id = sc2.nextLine();
-    	for(Articulo articulo:listaArticulos) {
-    		if (id.equals(articulo.getId())) {
-    			listaArticulos.remove(articulo);
-    			System.out.println("Articulo borrado con éxito " ); 
-    		}else {
-    			System.out.println("Error al introducir el artículo");
-    		}
-    		
-    	}
+    private static void borrarArticulo(List<Articulo> listaArticulos) {
+        Scanner sc2 = new Scanner(System.in);
+        System.out.println("Ingrese el ID del artículo a borrar");
+        String id = sc2.nextLine();
+
+       //Crear una lista de una copia que va a recorrer el for. 
+        //Y la eliminación se hace sobre la listaArticulos
+        List<Articulo> copiaLista = new ArrayList<>(listaArticulos);
+
+        for (Articulo articulo : copiaLista) {
+            if (id.equals(articulo.getId())) {
+                listaArticulos.remove(articulo);
+                System.out.println("Artículo borrado con éxito");
+            }
+        }
+       
     }
-    
+
+    //Consultar por articulo para esto le pasamos un id y recorremos el Array
     private static void consultarArticulo(List<Articulo>listaArticulos) {
     	Scanner sc3 = new Scanner(System.in);
     	System.out.println("Inserte el id del artículo que quiere consultar");
@@ -137,13 +141,13 @@ public class LecturaObjeto {
     		  System.out.println(articulo);
     	}
     }
-    
+    //Listamos el artículo
     private static void listarArticulo(List<Articulo>listaArticulos) {
     	for(Articulo articulo: listaArticulos) {
     		System.out.println(articulo);
     	}
     }
-    
+    //La opción 6 leerá todo lo que contenga el fichero "articulos"
     private static void escribirArticulos(List<Articulo> listaArticulos) {
         try (FileOutputStream fichero = new FileOutputStream("articulos.dat");
              ObjectOutputStream dependiente = new ObjectOutputStream(fichero)) {
@@ -158,6 +162,8 @@ public class LecturaObjeto {
         }
     }
    
+    
+    //Exportar en CSV
     public static void exportarCSV(List<Articulo> listaArticulos) {
         File archivoCSV = new File("./articulos.csv");
 

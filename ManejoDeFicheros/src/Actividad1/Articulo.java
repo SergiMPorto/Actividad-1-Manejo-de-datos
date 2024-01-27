@@ -4,11 +4,15 @@ import java.io.Serializable;
 
 public class Articulo implements Serializable {
 
+/*
+ * @autor Sergi
+ * @version 1.0
+ * @since 26-01-2024
+ */
 
-/**
-	 * 
-	 */
-	private static final long serialVersionUID = -2609793907733077876L;
+	private static final long serialVersionUID = -6507195478141516125L;
+
+
 
 
 @Override
@@ -18,9 +22,7 @@ public String toString() {
 }
 
 
-/**
-	 * 
-	 */
+
 	
 private String nombre;
 private String id;

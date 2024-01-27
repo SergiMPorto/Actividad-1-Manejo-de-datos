@@ -24,10 +24,13 @@ public class ArticulosAlAbrir implements Serializable {
         listaArticulos.add(art3);
         listaArticulos.add(art4);
         listaArticulos.add(art5);
+        
+        //Creamos el fichero articulos.dat y ponemos como segundo argumento false para poder
+        //poder sobreescribir sobre él.
 
         try (FileOutputStream fichero = new FileOutputStream("articulos.dat", false);
              ObjectOutputStream dependiente = new ObjectOutputStream(fichero)) {
-
+//Le pasamos un for para que nos pase por consola los articulos que ya tenemos en el fichero "articulos.dat
             for (Articulo articulo : listaArticulos) {
                 dependiente.writeObject(articulo);
             }
