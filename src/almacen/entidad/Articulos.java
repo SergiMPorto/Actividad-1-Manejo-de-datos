@@ -1,6 +1,8 @@
 package almacen.entidad;
 
-public class Articulos {
+import java.io.Serializable;
+
+public class Articulos implements Serializable {
 	 private static final long serialVersionUID = -6507195478141516125L;
 
 	    private String nombre;

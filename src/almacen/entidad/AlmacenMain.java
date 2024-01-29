@@ -78,16 +78,22 @@ public class AlmacenMain {
 	        System.out.print("Nombre del Producto: ");
 	        String nombre = scanner.nextLine();
 
-	        System.out.print("Código del Producto: ");
-	        String codigo = scanner.nextLine();
+	        String codigo;
+	        boolean codigoDuplicado;
+	        do {
+	            System.out.print("Código del Producto: ");
+	            codigo = scanner.nextLine();
+	            codigoDuplicado = false;
 
-	        // Validar código duplicado
-	        for (Articulos producto : listaProductos) {
-	            if (codigo.equals(producto.getCodigo())) {
-	                System.out.println("El código está duplicado. Introduce otro código.");
-	                return;
+	            // Validar código duplicado
+	            for (Articulos producto : listaProductos) {
+	                if (codigo.equals(producto.getCodigo())) {
+	                    System.out.println("El código está duplicado. Introduce otro código.");
+	                    codigoDuplicado = true;
+	                    break;
+	                }
 	            }
-	        }
+	        } while (codigoDuplicado);
 
 	        System.out.print("Categoría del Producto: ");
 	        String categoria = scanner.nextLine();
