@@ -67,7 +67,7 @@ public class ClaseFileMenu {
 	}
 
 	
-	/*
+	/*s
 	 * METODOS DEL MENÚ
 	 */
 			
@@ -76,7 +76,7 @@ public class ClaseFileMenu {
         int id = scanner.nextInt();
         scanner.nextLine(); 
 
-        System.out.print(" INTRODUCIR ELÑ NOMBRE DEL ARTÍCULO: ");
+        System.out.print(" INTRODUCIR EL NOMBRE DEL ARTÍCULO: ");
         String nombre = scanner.nextLine();
 
         System.out.print(" INTRODUCIR LA DESCRIPCIÓN DEL ARTÍCULO: ");
@@ -93,7 +93,7 @@ public class ClaseFileMenu {
     }
 
     private static void borrarArticulo(Almacen almacen, Scanner scanner) {
-        System.out.print("INTRODUCIR EL ID DEL ARTÑICULO PARA REALIZAR EL PROCESO DE -BORRAR ARTICULO-: ");
+        System.out.print("INTRODUCIR EL ID DEL ARTÍCULO  PARA REALIZAR EL PROCESO DE -BORRAR ARTICULO-: ");
         int id = scanner.nextInt();
         almacen.borrarArticuloPorId(id);
         System.out.println("EL PROCESO DE -BORRAR ARTÍCLULO- SE HA REZALIZADO CON EXISTO!");

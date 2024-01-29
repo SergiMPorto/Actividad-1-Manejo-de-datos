@@ -29,7 +29,7 @@ public class Almacen {
         if (!existeArticuloConId(articulo.getId())) {
             articulos.add(articulo);
         } else {
-            System.out.println("Error: Ya existe un artículo con el mismo ID.");
+            System.out.println("HA OCURRIDO UN ERROR! EXISTE UN ARTICULO CO EL MISMO ID.");
         }
     }
     
